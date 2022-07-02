@@ -1,0 +1,1 @@
+Main module used to deploy Nextcloud on Oracle Cloud Infrastructure using Always Free Tier resources.
