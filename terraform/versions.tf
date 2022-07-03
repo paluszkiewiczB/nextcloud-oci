@@ -9,23 +9,32 @@ terraform {
   }
 }
 
-variable "oci" {
-  description = "configuration of oci provider"
-  sensitive   = true
-  type        = object({
-    tenancy_ocid = string
-    user_ocid    = string
-    fingerprint  = string
-    private_key  = string
-    region       = string
-  })
+variable "tenancy_ocid" {
+  type      = string
+  sensitive = true
+}
+variable "user_ocid" {
+  type      = string
+  sensitive = true
+}
+variable "fingerprint" {
+  type      = string
+  sensitive = false
+}
+variable "private_key" {
+  type      = string
+  sensitive = true
+}
+variable "region" {
+  type      = string
+  sensitive = false
 }
 
 provider "oci" {
-  tenancy_ocid     = var.oci.tenancy_ocid
-  user_ocid        = var.oci.user_ocid
-  fingerprint      = var.oci.fingerprint
-  private_key_path = var.oci.private_key
-  region           = var.oci.region
+  tenancy_ocid     = var.tenancy_ocid
+  user_ocid        = var.user_ocid
+  fingerprint      = var.fingerprint
+  private_key_path = var.private_key
+  region           = var.region
 }
 
