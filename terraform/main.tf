@@ -10,5 +10,5 @@ resource "oci_core_vcn" "test" {
   cidr_blocks    = [
     "10.0.1.0/16"
   ]
-  defined_tags = local.default_tags
+  freeform_tags = local.default_tags
 }
