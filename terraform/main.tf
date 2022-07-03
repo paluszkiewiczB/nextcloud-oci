@@ -1,7 +1,7 @@
 locals {
   default_tags = {
-    Environment = "Test"
-    CreatedBy   = "Terraform"
+    "Environment" = "Test"
+    "CreatedBy"   = "Terraform"
   }
 }
 
